@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>植物疫情資訊管理及協作平台</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <style>
+        .demo_wrap {
+            max-width: 1000px;
+            margin: 0em auto 1em;
+            padding: 15px 15px 3em;
+            clear: both;
+            background: #FFF
+        }
+        .demo_wrap h1 {
+            display: inline-block;
+            margin: 0px auto;
+            max-width: 300px;
+            /*float: left;*/
+            margin-right: 1em 
+        }
+        b{
+            background: deeppink;
+            color: #fff;
+            padding: .25em .5em;
+        }
+        @media screen and (max-width:545px) {
+            .demo_wrap h1 {
+                max-width: 100%;
+                float: none;
+                text-align: center
+            }
+        }
+
+        .demo_wrap h1 img { width: auto; }
+        .num { width: 12% }
+
+        body { counter-reset: num }
+        table {
+            margin-bottom: 1em;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td{
+            padding: .5em;
+            text-align: left;
+        }
+
+        table td{ border: #ddd 1px solid; word-break: break-all; }
+        table td a{ word-break: break-all; }
+        table th{
+            background-color: #F3F3F3;
+            color: #333;
+            border: #DDD 1px solid;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        table caption {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.25em;
+            padding: .5em 0;
+            color: #ff5050
+        }
+        tbody tr td:first-child:before {
+            counter-increment: num;
+            display: block;
+            text-align: center;
+            content: counters(num, ".") " "
+        }
+        tbody tr td:nth-child(2) { width: 35% }
+        tbody tr td span{ color: deeppink; }
+        .btn_grp{ text-align: right; }
+
+        @media screen and (max-width:545px) {
+           .btn_grp{ text-align: center; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="demo_wrap">
+        <h1><img src="images/logo-index.png" alt=""></h1>
+        <!-- <div class="btn_grp">
+            <a href="#" class="btn">切版檔案請按此下載</a>
+        </div> -->
+        <div class="table_wrapper">
+            <!--  -->
+            <h3>制式頁面</h3>      
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>調查計畫列表</td>
+                        <td><a href="LP1.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>調查區域設定</td>
+                        <td><a href="LP2.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>查詢調查點</td>
+                        <td><a href="QP1.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>新增使用者</td>
+                        <td><a href="LP3.htm" target="_blank"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>SP特殊頁</h3>      
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>SP1個人化首頁(Home)</td>
+                        <td><a href="SP1.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP2上稿權限群組設定</td>
+                        <td><a href="SP2.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP3編修組織</td>
+                        <td><a href="SP3.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP4案件列表</td>
+                        <td><a href="SP4.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP5案件協同作業</td>
+                        <td><a href="SP5.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP6專家通報</td>
+                        <td><a href="SP6.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP7荔枝椿象調查表</td>
+                        <td><a href="SP7.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP8我要通報</td>
+                        <td><a href="SP8.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SP9彙整表</td>
+                        <td><a href="SP9.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>執行單位設定</td>
+                        <td><a href="SP10.htm" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>新增調查對象</td>
+                        <td>同 SP10</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>燈號設定</td>
+                        <td><a href="" target="_blank"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>pop up</h3>      
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>新增調查點</td>
+                        <td>SP6、7、9</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>嵌入外部資料</h3>      
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>頁籤：塞 Google Data Studio</td>
+                        <td><a href="SP13.htm" target="_blank"></a></td>
+                    </tr>
+                </tbody>
+            </table> 
+
+            <!-- <h3>title</h3>      
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank"></a></td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </div>
+    <!-- <a href="javascript:;" class="scrollToTop" >回頁首</a> -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <script src="js/hyui.js"></script>
+    <script src="js/customize.js"></script>
+    <script>
+    $(function() {
+        $('tbody').find('a').each(function(index, el) {
+            var Link = $(this).attr('href');
+            $(this).text(Link);
+        });
+    })
+    </script>
+</body>
+
+</html>

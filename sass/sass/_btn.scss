@@ -1,0 +1,263 @@
+// 按鈕設定
+$font-size: .938em;
+// $btn-font-color: $color-word;
+$btn-font-color: #a2a2a2;
+$btn-border: darken($color-word, 5);
+$btn-padding: .4em  1em;
+$btn-radius: 4px;
+// 按鈕外框
+.btn_grp {
+    text-align: center;
+    padding: 0.3em 0;
+}
+// 按鈕的共用設定
+@mixin btn_setting($btn-bg: #eee, $btn-font-color: $btn-font-color) {
+    background-color: $btn-bg;
+    //   border: 1px solid darken($btn-bg, 0);
+    //   border-bottom: 2px solid darken($btn-bg, 15);
+    color: $btn-font-color;
+    @include border-radius($btn-radius);
+    transition: .3s ease-out;
+    //   text-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.6);
+    &:hover,
+    &:focus {
+        // background-color: darken($btn-bg, 5); // Old browsers
+        // border: 1px solid darken($btn-bg, 10) !important;
+        // border-bottom: 2px solid darken($btn-bg, 10) !important;
+        // box-shadow: 0px 0px 0px 1px $form-focus;
+        cursor: pointer;
+        color: #fff;
+        box-shadow: none;
+    }
+    &:active {
+        transform: translateY(3px);
+    }
+    &.active {
+        background: darken($btn-bg, 5);
+        cursor: pointer;
+    }
+}
+// - 單色的
+@mixin btn_setting2($btn-bg:#f5f5f5, $btn-font-color:$btn-font-color) {
+    background: $btn-bg;
+    border: 1px solid darken($btn-bg, 15);
+    color: $btn-font-color;
+    text-shadow:1px 1px 1px RGBA(0,0,0,.3);
+    // border-radius: 60px;
+    &:hover, &:focus {
+        background: darken($btn-bg, 10); // Old browsers
+        border: 1px solid darken($btn-bg, 20) !important;
+        cursor: pointer;
+        color: #FFF;
+        outline:none;
+    }
+    &.active {
+        background: lighten($btn-bg, 5);
+        cursor: pointer;
+    }
+}
+
+// readonly、disabled
+@mixin btn_readonly($btn-bg:#f5f5f5, $btn-font-color:$btn-font-color) {
+    background: $btn-bg;
+    border: 1px solid darken($btn-bg, 15);
+    color: $btn-font-color;
+    text-shadow: none;
+    cursor: not-allowed !important;
+    // border-radius: 60px;
+    opacity: 75%;
+    @include border-radius($btn-radius);
+    &:hover, &:focus {
+        // background: darken($btn-bg, 10); // Old browsers
+        border: 1px solid darken($btn-bg, 15) !important;
+        // cursor: pointer;
+        // color: #FFF;
+        outline:none;
+    }
+}
+
+// 按鈕預設陰影
+%btn {
+    font-size: $font-size;
+    background-image: none; //修正firefox
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: normal;
+    width: auto;
+    min-width: 4em;
+    margin: 0.25em;
+}
+.btn {
+    @extend %btn;
+    padding: $btn-padding;
+    touch-action: manipulation;
+    position: relative;
+    overflow: hidden;
+    @include box-sizing(border-box);
+    @include btn_setting();
+    @include text-shadow(RGBA(0, 0, 0, 0.3) 0px 0px 0px);
+    i {
+        margin-right: 0.3em;
+        // margin-left: 0.3em;
+    }
+    &:hover,
+    &:focus {
+        color: $btn-font-color;
+        // background-color: rgb(230, 230, 230); // Old browsers
+        // @include filter-gradient(#eaeaea, #eaeaea, vertical); // IE6-9
+        // @include background-image(linear-gradient(top, #eaeaea 0%, #eaeaea 100%));
+        outline: none;
+    }
+    .ink {
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+    }
+    .animate {
+        animation: ripple 0.35s linear;
+    }
+    @keyframes ripple {
+        100% {
+            opacity: 0;
+            transform: scale(6.5);
+        }
+    }
+}
+//按鈕顏色
+//@include btn_setting(按鈕顏色,字的顏色);
+.btn-green {
+    @extend %btn;
+    // color:#FFF;
+    @include btn_setting(darken($color-green, 5), #fff);
+}
+.btn-blue {
+    @extend %btn;
+    @include btn_setting(darken($color-blue, 5), #fff);
+}
+.btn-yellow {
+    @extend %btn;
+    @include btn_setting(darken($color-yellow, 5), #333);
+}
+.btn-orange {
+    @extend %btn;
+    @include btn_setting(darken($color-orange, 2), #fff);
+}
+.btn-red {
+    @extend %btn;
+    @include btn_setting(darken($color-red, 5), #fff);
+}
+.btn-purple {
+    @extend %btn;
+    @include btn_setting(darken($color-purple, 5), #fff);
+}
+// .btn-primary {
+//     @extend %btn;
+//     @include btn_setting(lighten($primaryColor, 0), #fff);
+// }
+// .btn-secondary {
+//     @extend %btn;
+//     @include btn_setting(darken($form-focus, 10), #fff);
+// }
+
+// 主要按鈕
+.btn-primary{
+    @extend %btn;
+    @include btn_setting2(#f66339, #FFF);
+}
+// 次要按鈕
+.btn-secondary{
+    @extend %btn;
+    @include btn_setting2($primaryColor, #FFF);
+}
+// 一般按鈕
+.btn-normal{
+    @extend %btn;
+    @include btn_setting2(#a3b5a3, #FFF);
+}
+// 操作按鈕
+.btn-operating {
+    @extend %btn;
+    @include btn_setting(#555, #FFF);
+}
+
+.btn-primary, .btn-secondary{
+    i{
+        &:before{ filter: invert(100%); }
+    }
+}
+
+// 純文字按鈕
+.btn-pure {
+    text-shadow: none;
+    background: none;
+    border: 1px solid transparent;
+    // border-bottom: dotted 1px #ddd;
+    padding-left: 2.25em;
+
+    position: relative;
+
+    &:before{
+        content: "";
+        background: url(../images/basic/icon_info.svg) no-repeat center center;
+        background-size: 15px;
+        position: absolute;
+        top: calc(38px / 2 - 10px);
+        left: .8em;
+        display: block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        content: "";
+    }
+    &:hover, &:focus{
+        background: none;
+        border: 1px solid transparent;
+    }
+}
+
+input[readonly], input[disabled]{
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-normal,
+    &.btn-operating{
+        @include btn_readonly;
+    }
+
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-normal{
+        // border-radius: 60px;
+    }
+
+    &.btn-primary{
+        &:hover, &:focus {}
+    }
+    &.btn-secondary{
+        &:hover, &:focus {}
+    }
+    &.btn-normal{
+        &:hover, &:focus {}
+    }
+    &.btn-operating{
+        &:hover, &:focus {}
+    }
+}
+
+// 按鈕大小
+.btn-xl {
+    font-size: $font-size * 1.5; //24px
+}
+.btn-lg {
+    font-size: $font-size * 1.25; //20px
+}
+.btn-sm {
+    font-size: $font-size * 0.938; //15px
+}
+.btn-xs {
+    font-size: $font-size * 0.75; //12px
+}

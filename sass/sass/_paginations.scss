@@ -1,0 +1,164 @@
+.pagination {
+    // margin: .5em auto 5em;
+    margin: .5em auto;
+    padding: 0;
+    display: block;
+    text-align: center;
+    font-size: .875em;
+    @extend %clearfix; // outline: 1px solid red;
+    span {
+        color: $aColor;
+        margin: 0px .5em;
+    }
+    .page {
+        margin: 10px 0;
+        padding: 0;
+        display: block;
+        li {
+            display: inline-block;
+            min-width: 20px;
+            height: 30px;
+            margin:0px 2px 5px;
+            list-style: none;
+            @include box-sizing();
+            a {
+                border-radius: 5px;
+                padding: 5px;
+                width: 36px;
+                font-weight: 700;
+                display: block;
+                white-space: nowrap;
+                font-size: 1em;
+                color: $wordColor;
+                @include gradient (#FFF, #F1F1F1, vertical);
+                border: #CCC solid 1px;
+                &:hover,
+                &:focus {
+                    background: lighten($primaryColor,10);
+                    color: #fff !important;
+                    border: lighten($primaryColor,10) solid 1px;
+                    text-shadow: 0px 1px 2px rgba(0, 0, 0, .75);
+                }
+            }
+            &.active {
+                a {
+                    color: #FFF;
+                    border: 1px solid lighten($primaryColor,10);
+                    background: lighten($primaryColor,10);
+                    text-shadow: 0px 1px 2px rgba(0, 0, 0, .75);
+                }
+            }
+            %arrow {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 6px;
+                margin-top: -4px;
+                border: 2px solid #666;
+                border-left: none;
+                border-bottom: none;
+            }
+            &.first,
+            &.prev,
+            &.next,
+            &.last {
+                a {
+                    text-indent: -9999px;
+                    position: relative;
+                    &:hover, &:focus {
+                        &:before, &:after {
+                            border: 2px solid #FFF;
+                            border-left: none;
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            &.first {
+                a:before {
+                    @extend %arrow;
+                    margin-left: -6px;
+                    transform: rotate(-135deg);
+                }
+                a:after {
+                    @extend %arrow;
+                    margin-left: 0px;
+                    transform: rotate(-135deg);
+                }
+            }
+            &.prev {
+                a:before {
+                    @extend %arrow;
+                    margin-left: -2px;
+                    transform: rotate(-135deg);
+                }
+            }
+            &.next {
+                a:before {
+                    @extend %arrow;
+                    margin-left: -6px;
+                    transform: rotate(45deg);
+                }
+            }
+            &.last {
+                a:before {
+                    @extend %arrow;
+                    margin-left: -3px;
+                    transform: rotate(45deg);
+                }
+                a:after {
+                    @extend %arrow;
+                    margin-left: -9px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    .total {
+        padding: 0em;
+        display: inline-block;
+        vertical-align: middle;
+        color: #666;
+        select {
+            margin: 0px .5em;
+            border-radius:.2em;
+            @include screen('mobile') {
+                margin: 0px;
+            }
+        }
+        input[type="button"] {
+            @include gradient(#F7F7F7, #EAEAEA, vertical);
+            border: 1px solid #CCC;
+            color: #222;
+            padding: .4em 1em !important;
+            min-width: 3em;
+            display: inline-block;
+            vertical-align: middle;
+            box-shadow: none;
+            text-shadow: none;
+            &:hover, &:focus {
+                color: #fff !important;
+                background: $form-focus;
+                border: darken($form-focus, 5) solid 1px;
+                box-shadow: none !important;
+            }
+        }
+    }
+    .items {
+        display: inline-block;
+        vertical-align: middle;
+        a {
+            padding: 0 5px;
+            color: $primaryColor;
+            text-decoration: none;
+        }
+    }
+}
+@include screen('mobile') {
+    .pagination .total select.form-control {
+        margin: 0px 0px;
+        text-align: center;
+    }
+}

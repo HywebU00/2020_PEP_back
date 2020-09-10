@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>植物疫情資訊管理及協作平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <!-- highlight -->
+    <!-- <link rel="stylesheet" href="vendor/highlight/github-gist.css"> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header load header.htm -->
+        <header></header>
+        <div class="main">
+            <!-- aside load aside.htm -->
+            <aside></aside>
+            <!-- 主要內容區 -->
+            <div class="content">
+                <!-- 最新消息 -->
+                <a href="#" id="switch_news">最新消息</a>
+                <section id="news">
+                    <a href="#" id="close">關閉</a>
+                    <h3>最新<span>消息</span></h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                新系統上線，如有任何操作上的問題，請參閱<span>操作手冊</span>與<span>常見問題</span>，或者是撥打服務專線 02-2395-6966 ext 2501
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                教育訓練課程開放報名，歡迎立即前往<span>線上報名</span>教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往
+                            </a>
+                        </li>
+                    </ul> 
+                    <a href="#" class="btn more">更多最新消息</a>
+                </section>
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="light.htm">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
+                </div>
+                <!-- gird section -->
+                <div class="grid">
+                    <div class="container">
+                        <div class="title">
+                            <h2>系統首頁儀表板</h2>
+                            <!-- function功能區塊 -->
+                            <div class="function">
+                                <ul>
+                                    <li><a href="javascript:history.back()" class="back">回上一頁</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- flex-12 -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <div class="_head">
+                                        <h3>最新消息</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="num">1</span>
+                                                        <span class="dept">服務照顧處<time>2018-03-09</time></span>
+                                                        颱風逼近軍民齊心加強防颱戒備
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="num">2</span>
+                                                        <span class="dept"> 就養養護處<time>2018-03-09</time></span>
+                                                        東坑微電網示範將到期縣府盼由台電承接 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                                     </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="num">3</span>
+                                                        <span class="dept"> 就學就業處<time>2018-03-09</time></span>
+                                                        公務員高普考10日登場縣府謹慎試務
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="num">4</span>
+                                                        <span class="dept">就學就業處<time>2018-03-09</time></span>
+                                                        縣長﹕導引正向能量提升教育競爭力
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="num">5</span>
+                                                        <span class="dept">就學就業處<time>2018-03-09</time></span>
+                                                        颱風逼近軍民齊心加強防颱戒備
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- btn -->
+                                        <div class="btn_grp">
+                                            <!-- <input type="submit" class="btn btn-primary" value="編修存檔">
+                                            <input type="reset" class="btn btn-secondary" value="清除重填">
+                                            <input type="button" class="btn btn-normal" value="取消"> -->
+                                            <input type="button" class="btn btn-secondary" value="更多最新消息">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- flex-12 -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <div class="_head">
+                                        <h3>待處理事項（疫情通報）</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <!-- 表格樣式 -->
+                                        <div class="table_wrapper">
+                                            <table class="table_hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>通報日期</th>
+                                                        <th>案件階段</th>
+                                                        <th>通報單/案號</th>
+                                                        <th>案由</th>
+                                                        <th>通報單位</th>
+                                                        <th>送達時間</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>109/08/27</td>
+                                                        <td>通報</td>
+                                                        <td><a href="#">10908A10001</a></td>
+                                                        <td>番茄田發現番茄潛旋蛾</td>
+                                                        <td>全民通報</td>
+                                                        <td>109/08/27 15:29:32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>109/08/27</td>
+                                                        <td>通報</td>
+                                                        <td><a href="#">10908A10001</a></td>
+                                                        <td>番茄田發現番茄潛旋蛾</td>
+                                                        <td>全民通報</td>
+                                                        <td>109/08/27 15:29:32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>109/08/27</td>
+                                                        <td>通報</td>
+                                                        <td><a href="#">10908A10001</a></td>
+                                                        <td>番茄田發現番茄潛旋蛾</td>
+                                                        <td>全民通報</td>
+                                                        <td>109/08/27 15:29:32</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- flex-12  -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <div class="_head">
+                                        <h3>我參與的計畫</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <!-- 表格樣式 -->
+                                        <div class="table_wrapper">
+                                            <table class="table_hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>主辦專家</th>
+                                                        <th>計畫編號</th>
+                                                        <th>計畫名稱</th>
+                                                        <th>調查起迄日期</th>
+                                                        <th>狀態</th>
+                                                        <th>最後調查日期</th>
+                                                        <th>最後鑑定日期</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>王曉明</td>
+                                                        <td><a href="#">109LN004</a></td>
+                                                        <td>稻熱病調查計畫</td>
+                                                        <td>109/02/01~109/10/31</td>
+                                                        <td>執行中</td>
+                                                        <td>109/10/31</td>
+                                                        <td>不需鑑定</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>王曉明</td>
+                                                        <td><a href="#">109LN004</a></td>
+                                                        <td>稻熱病調查計畫</td>
+                                                        <td>109/02/01~109/10/31</td>
+                                                        <td>執行中</td>
+                                                        <td>109/10/31</td>
+                                                        <td>不需鑑定</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>王曉明</td>
+                                                        <td><a href="#">109LN004</a></td>
+                                                        <td>稻熱病調查計畫</td>
+                                                        <td>109/02/01~109/10/31</td>
+                                                        <td>執行中</td>
+                                                        <td>109/10/31</td>
+                                                        <td>不需鑑定</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- flex-12  -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <div class="_head">
+                                        <h3>最新消息</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <!-- selector -->
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <th width="120">疫病蟲害</th>
+                                                    <td>
+                                                        <select name="" id="">
+                                                            <option value="選項1">選項1</option>
+                                                            <option value="選項2">選項2</option>
+                                                            <option value="選項3" selected="">選項3</option>
+                                                            <option value="選項4">選項4</option>
+                                                            <option value="選項5">選項5</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- <div class="flex">
+                                            <label>疫病蟲害</label>
+                                            <select name="" id="">
+                                                <option value="選項1">選項1</option>
+                                                <option value="選項2">選項2</option>
+                                                <option value="選項3" selected="">選項3</option>
+                                                <option value="選項4">選項4</option>
+                                                <option value="選項5">選項5</option>
+                                            </select>
+                                        </div> -->
+                                        <div class="help">
+                                            <ul>
+                                                <li>紅燈(警報)：發現1000隻以上蟲體，嚴重危害。</li>
+                                                <li>黃燈(預警)：發現250~999隻蟲體，已造成危害。</li>
+                                                <li>綠燈：發現0~249隻蟲體，未造成危害。</li>
+                                                <li>白燈：無監控或未回報系統自動跳白燈。</li>
+                                            </ul>
+                                        </div> 
+                                        <!-- 頁籤 -->
+                                        <!-- <div class="tabSet">
+                                            <section class="tabs">
+                                                <h2 class="tabItem active"><a href="javascript:;">以地區顯示</a></h2>
+                                                <div class="tabContent">
+                                                    <div class="area">
+                                                        <section>
+                                                            <p>北部</p>
+                                                            <div>基隆市</div>
+                                                            <div class="alert">台北市</div>
+                                                            <div class="pre-alert">新北市</div>
+                                                            <div class="safe">桃園市</div>
+                                                            <div>新竹縣</div>
+                                                            <div>新竹市</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>中部</p>
+                                                            <div>苗栗縣</div>
+                                                            <div>台中市</div>
+                                                            <div>彰化縣</div>
+                                                            <div>南投縣</div>
+                                                            <div>雲林縣</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>南部</p>
+                                                            <div>嘉義縣</div>
+                                                            <div>嘉義市</div>
+                                                            <div>台南市</div>
+                                                            <div>高雄市</div>
+                                                            <div>屏東縣</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>東部</p>
+                                                            <div>宜蘭縣</div>
+                                                            <div>花蓮縣</div>
+                                                            <div>台東縣</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>離島</p>
+                                                            <div>澎湖縣</div>
+                                                            <div>金門縣</div>
+                                                            <div>連江縣</div>
+                                                        </section> 
+                                                    </div>
+                                                </div>
+                                                <h2 class="tabItem"><a href="#">以燈號顯示</a></h2>
+                                                <div class="tabContent">
+                                                    <div class="lamp">
+                                                        <section>
+                                                            <p>紅燈(警報)</p>
+                                                            <div class="alert">高雄市</div>
+                                                            <div class="alert">屏東縣</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>黃燈(預警)</p>
+                                                            <div class="pre-alert">彰化縣</div>
+                                                            <div class="pre-alert">雲林縣</div>
+                                                            <div class="pre-alert">嘉義縣</div>
+                                                        </section>
+                                                        <section>
+                                                            <p class="safe">綠燈</p>
+                                                            <div class="safe">新竹縣</div>
+                                                            <div class="safe">南投縣</div>
+                                                            <div class="safe">宜蘭縣</div>
+                                                            <div class="safe">花蓮縣</div>
+                                                        </section> 
+                                                        <section>
+                                                            <p>白燈</p>
+                                                            <div>基隆市</div>
+                                                            <div>台北市</div>
+                                                            <div>新北市</div>
+                                                            <div>桃園市</div>
+                                                            <div>新竹市</div>
+                                                            <div>苗栗縣</div>
+                                                            <div>台中市</div>
+                                                            <div>嘉義市</div>
+                                                            <div>台南市</div>
+                                                            <div>台東縣</div>
+                                                            <div>澎湖縣</div>
+                                                            <div>金門縣</div>
+                                                            <div>連江縣</div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div> -->
+                                        <!-- 頁籤2 -->
+                                        <div class="tabSet2">
+                                            <section class="tabs"> 
+                                                <div class="tabItem">
+                                                    <h2 class=""><a href="javascript:;">以地區顯示</a></h2>
+                                                    <h2 class=""><a href="javascript:;">以燈號顯示</a></h2>
+                                                </div>
+                                                <!-- 內容 -->
+                                                <div class="tabContent">
+                                                    <div class="box">
+                                                        <div class="area">
+                                                            <section>
+                                                                <p>北部</p>
+                                                                <div>基隆市</div>
+                                                                <div class="alert">台北市</div>
+                                                                <div class="pre-alert">新北市</div>
+                                                                <div class="safe">桃園市</div>
+                                                                <div>新竹縣</div>
+                                                                <div>新竹市</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>中部</p>
+                                                                <div>苗栗縣</div>
+                                                                <div>台中市</div>
+                                                                <div>彰化縣</div>
+                                                                <div>南投縣</div>
+                                                                <div>雲林縣</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>南部</p>
+                                                                <div>嘉義縣</div>
+                                                                <div>嘉義市</div>
+                                                                <div>台南市</div>
+                                                                <div>高雄市</div>
+                                                                <div>屏東縣</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>東部</p>
+                                                                <div>宜蘭縣</div>
+                                                                <div>花蓮縣</div>
+                                                                <div>台東縣</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>離島</p>
+                                                                <div>澎湖縣</div>
+                                                                <div>金門縣</div>
+                                                                <div>連江縣</div>
+                                                            </section> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="lamp">
+                                                            <section>
+                                                                <p>紅燈(警報)</p>
+                                                                <div class="alert">高雄市</div>
+                                                                <div class="alert">屏東縣</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>黃燈(預警)</p>
+                                                                <div class="pre-alert">彰化縣</div>
+                                                                <div class="pre-alert">雲林縣</div>
+                                                                <div class="pre-alert">嘉義縣</div>
+                                                            </section>
+                                                            <section>
+                                                                <p class="safe">綠燈</p>
+                                                                <div class="safe">新竹縣</div>
+                                                                <div class="safe">南投縣</div>
+                                                                <div class="safe">宜蘭縣</div>
+                                                                <div class="safe">花蓮縣</div>
+                                                            </section> 
+                                                            <section>
+                                                                <p>白燈</p>
+                                                                <div>基隆市</div>
+                                                                <div>台北市</div>
+                                                                <div>新北市</div>
+                                                                <div>桃園市</div>
+                                                                <div>新竹市</div>
+                                                                <div>苗栗縣</div>
+                                                                <div>台中市</div>
+                                                                <div>嘉義市</div>
+                                                                <div>台南市</div>
+                                                                <div>台東縣</div>
+                                                                <div>澎湖縣</div>
+                                                                <div>金門縣</div>
+                                                                <div>連江縣</div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                <span>行政院農業委員會動植物防疫檢疫局</span>
+                <span>10070台北市和平西路二段100號11樓&nbsp;&nbsp;電話：(02)2343-1401&nbsp;&nbsp;傳真：(02)2332-2200</span>
+                <span>Copyright© 2006 All rights are reserved.&nbsp;版權所有，轉載必究</span>
+            </p>
+        </footer>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/pattern-fill.js"></script> -->
+    <script>
+    $('header').load("header.htm");
+    $('aside').load("aside.htm");
+    </script>
+</body>

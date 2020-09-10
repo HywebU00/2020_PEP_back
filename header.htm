@@ -1,0 +1,75 @@
+<div class="container">
+    <!-- toggle_menu_btn 收合按鈕 -->
+    <a href="#" class="toggle_menu_btn"></a>
+    <h1>
+        <a href="index.htm">
+            <img src="images/logo.png" alt="">
+            <!-- <span>植物疫情資訊管理及協作平台</span> -->
+        </a>
+    </h1>
+    <!-- 版頭右側功能 -->
+    <div class="control_panel">
+        <!-- 提醒事項通知 -->
+        <!-- <div class="item alert">
+            <a href="#">
+                <img src="images/iot_icon/alert.svg" alt="">
+            </a>
+            <span>100</span>
+        </div> -->
+        <!-- 字級 -->
+        <div class="font_size">
+            <span>字級：</span>
+            <!-- 英文用<span>font-size：</span> -->
+            <ul>
+                <li><a href="#" class="small">小</a></li>
+                <li><a href="#" class="medium">中</a></li>
+                <li><a href="#" class="large">大</a></li>
+            </ul>
+        </div>
+        <!--  個人化panel -->
+        <div class="item account dropdown">
+            <a href="#" class="dropdown-btn">
+                <img src="images/man.svg" alt="">
+            </a>
+            <div class="dropdown-content">
+                <div class="info">
+                    <div class="pic">
+                        <img src="https://assets.imgix.net/unsplash/bear.jpg?w=800&h=480" alt="">
+                    </div>
+                    <div class="id">admin(administrator)</div>
+                </div>
+                <ul>
+                    <li>2020-01-01 14:00:05 從10.10.1.1 登入系統</li>
+                </ul>
+                <div class="btn-grp">
+                    <button class="btn">變更密碼</button>
+                    <button class="btn btn-red">登出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- customize -->
+<script src="js/customize.js"></script>
+<script>
+     //----------------------------------------------------------版頭-----//
+    var dropdownStatus = false;
+    $('.dropdown-btn').each(function(index, el) {
+        $(this).click(function(e) {
+            $(this).siblings('.dropdown-content').toggleClass('show');
+            dropdownStatus = true;
+            $(this).blur();
+            e.preventDefault();
+        });
+    });
+    $(document).mouseup(function(e) {
+        var target = e.target,
+            container = $('.dropdown-content');
+        if ((!container.is(e.target) && container.has(e.target).length === 0) && (!$('.dropdown-btn').is(e.target) || !$('.btn-dropdown').is(e.target))) {
+            if (!(($('.dropdown-btn').is(e.target) || $('.btn-dropdown').is(e.target)) && ($(target).siblings('.show').length > 0))) {
+                container.removeClass('show');
+            }
+        }
+    });
+</script>

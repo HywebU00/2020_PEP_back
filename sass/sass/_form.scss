@@ -1,0 +1,864 @@
+@mixin formStyle($f_color:$color-word, $f_border:$color-gray, $f_radius:.2em) {
+    color: $f_color;
+    font-size: 1em;
+    border: 1px solid transparent;
+    padding:.75em;
+    @include box-sizing();
+    // @include border-radius($f_radius);
+    transition: .3s ease-out;
+    &:hover {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+        // box-shadow: 0px 0px 0px 2px $form-focus;
+    }
+}
+select::-ms-expand {
+    display: none;
+}
+// .single-form {
+//     max-width: 40em;
+//     margin-left: 2em;
+//     margin-right: 2em;
+//     @include screen('tablet') {
+//         margin-left: 0em;
+//         margin-right: 0em;
+//     }
+// }
+.labelEffect {
+    &+.labelEffect{
+        margin-left:4%;
+        @include screen('mobile') {
+            margin-left:0;
+        }
+    }
+    &.password_toggle,&.hasBtn{
+        input[type="text"],input[type="password"]{
+            padding-right: 3em;
+            letter-spacing: .1em;
+        }
+    }
+    display: flex;
+    flex: 1 1 46%;
+    position: relative;
+    margin-bottom: .2em;
+    // border-bottom: 1px solid #DEDEDE;
+    // padding-bottom: .2em;
+    &>label {
+        width: 100%;
+        color: #666;
+        align-items: flex-start;
+        font-size: 1em;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 0px;
+        bottom: 0;
+        height: 100%;
+        padding: .6em .75em;
+        transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        &:before, &:after {
+            content: "";
+            display: block;
+            width: 0%;
+            left: 50%;
+            position: absolute;
+            bottom: -2px;
+            height: 2px;
+            background: lighten($form-focus, 0);
+            transition: 0.2s ease all;
+        }
+    }
+    input, textarea, select {
+        flex: 1 1 70%;
+        border-radius:.2em;
+        &:focus, &.used {
+            &~label {
+                bottom: 0;
+                font-size: .9em;
+                color: #555;
+                padding: 0;
+                pointer-events: none;
+                height: calc(100% + 1.95em);
+                &:before {
+                    width: 50%;
+                    left: 0%;
+                }
+                &:after {
+                    width: 50%;
+                    right: 50%;
+                }
+            }
+        }
+        &.used {
+            &~label {
+                &:before {
+                    width: 0%;
+                    left: 50%;
+                }
+                &:after {
+                    width: 0%;
+                    left: 50%;
+                }
+            }
+        }
+    }
+    [class^="btn"], .additonal {
+        flex: 0 1 10%;
+        min-width: 0em;
+        margin: 0em 0 0 .5em;
+        padding: .2em .25em;
+        font-size: .938em;
+    }
+    .btn-icon {
+        flex: 0 1 3em;
+        background: none;
+        flex: 0 1 10%;
+        min-width: 0em;
+        margin: 0em 0 0 .5em;
+        padding: .2em .25em;
+        font-size: .938em;
+        position:absolute;
+        right:.5em;
+        top:.35em;
+        i {
+            font-size: 1.25em;
+        }
+    }
+    .additional {
+        white-space: nowrap;
+        font-size: .875rem;
+        color: #666;
+        padding: 0 .5em;
+        align-self: flex-end;
+        label {
+            input {
+                flex: 0 1 1.2em !important;
+            }
+        }
+    }
+}
+.flex-form {
+    &.flex-6-6 {
+        align-content: stretch;
+        .form_grp {
+            flex: 1 1 50%;
+        }
+    }
+    font-size: .938em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-top: .5em;
+    @include screen('mobile') {
+        margin: .2em;
+        width: 100%;
+        min-width: 1em;
+    }
+    .form_grp {
+        flex: 0 1 100%;
+        flex: 0 1 calc(100% - 0em);
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0em;
+        margin-top: .5em;
+        margin-bottom: 1.5em;
+        align-items: center;
+        align-content: flex-start;
+        position: relative;
+        @include screen('mobile') {
+            flex-basis: 100%;
+        }
+        .help {
+            font-size: .813em;
+            color: #888;
+            text-align: right;
+            margin-left: auto;
+            padding: 0 .5em;
+            position: absolute;
+            bottom: -1.75em;
+            right: 0;
+
+            padding-left: 1.5em;
+            background: pink;
+            background: url(../images/icon/icon_arrow_up2.svg) 0 50% no-repeat;
+            background-size: 14px;
+        }
+        &.error {
+            input {
+                background: #F5F5F5;
+            }
+            .labelEffect {
+                &>label {
+                    color: $color-red;
+                    &:before, &:after {
+                        background: $color-red;
+                    }
+                }
+            }
+            .form_title {
+                color: $color-red;
+            }
+            .form_inline {
+                .labelEffect {
+                    &:before {
+                        width: 50%;
+                        left: 0%;
+                    }
+                    &:after {
+                        width: 50%;
+                        right: 50%;
+                    }
+                }
+            }
+        }
+    }
+    // 日期選擇
+    .datepick {
+        display: flex;
+        flex: 0 1 100%;
+        flex-flow: row wrap;
+        position: relative;
+        .help {
+            bottom: -1.75em;
+        }
+        input.calendar {
+            width: 100%;
+            padding-right: 2em;
+        }
+        .btn {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            right: .5em;
+            top: .4em;
+            min-width: 0em;
+            border: none;
+            align-self: flex-start;
+            i {
+                font-size: 1.5em;
+                opacity: .75;
+                margin: 0;
+                &:before {
+                    margin: 0;
+                }
+            }
+            &:hover, &:focus {
+                i {
+                    opacity: 1;
+                }
+            }
+        }
+        .startDate, .endDate {
+            flex: 0 1 calc(50% - 1em);
+            position: relative;
+        }
+        .endDate {
+            margin-left: 2em;
+            &:after {
+                position: absolute;
+                content: "~";
+                left: -1em;
+                top: .4em;
+                font-size: 1.125rem;
+            }
+        }
+    }
+    .datepick {
+        .btn {
+            background: none;
+        }
+    }
+    //
+    .form_title_th, .form_content_th {
+        text-align: center;
+        font-weight: bold;
+        padding: .2em 0 1.5em;
+        font-size: .938em;
+        height: 3em;
+        line-height: 3em;
+        @include screen('mobile') {
+            display: none;
+        }
+    }
+    .form_title {
+        position: absolute;
+        // font-size: .75rem;
+        // color: #999;
+        font-size: .9rem;
+        color: #555;
+        top: -1.75em;
+        left: 0em;
+    }
+    .form_content {
+        display: flex;
+        flex-flow: row wrap;
+        flex: 1 1 calc(100% - 150px);
+        align-items: flex-start;
+        // border-bottom: 1px solid #ddd;
+        align-self: stretch;
+        // padding: 0 .25em .5em;
+        padding: .3em .25em;
+        [class^="notice"] {
+            flex: 1 1 100%;
+        }
+        &.form_inline {
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 0em;
+            border-bottom: none;
+            .labelEffect {
+                flex: 1 1 auto;
+                margin-right: .5em;
+                align-self: center;
+                margin-bottom: .2em;
+                &:before, &:after {
+                    content: "";
+                    display: block;
+                    width: 0%;
+                    left: 50%;
+                    position: absolute;
+                    bottom: -2px;
+                    height: 2px;
+                    // background: lighten($color-red, 0);
+                    background:transparent;
+                    transition: 0.2s ease all;
+                }
+                &.short, &.zip, &.ext, &.county, &.dist {
+                    flex: 0 1 8em;
+                    text-align: center;
+                    min-width: 8em;
+                    input {
+                        text-align: center;
+                    }
+                }
+                &.address {
+                    flex: 1 1 auto;
+                    @include screen('tablet') {
+                        flex: 0 1 100%;
+                    }
+                }
+                span {
+                    font-size: .875rem;
+                    align-self: center;
+                    justify-content: center;
+                    white-space: nowrap;
+                    margin-right: .5em;
+                    color: #999;
+                }
+            }
+        }
+        .help {
+            font-size: .813em;
+            color: #888;
+            text-align: right;
+            margin-left: auto;
+            padding: 0 .5em;
+            padding-left: 1.5em;
+            position: absolute;
+            bottom: -1.75em;
+            right: 0;
+        }
+        p, p.notice {
+            font-size: .875rem;
+            flex: 1 1 80%;
+            margin: 0;
+            color: #999;
+            background: none;
+            padding: 0;
+            border: none;
+        }
+        .form_grp {
+            border-bottom: none;
+        }
+        .info {
+            margin: .3em 0;
+            span {
+                display: inline-block;
+                margin-right: .3em;
+                // color: $color-info;
+            }
+        }
+        &.hasDot {
+            padding-right: 1em;
+            position: relative;
+            button, a, input[type="button"] {
+                padding: .5em !important;
+                right: 1.1em;
+                top: 0em;
+                font-size: 1em;
+                margin: 0;
+                width: 3em;
+                min-width: 3em;
+                position: absolute;
+                @include text-overflow;
+                @include gradient(#FFF, #EEE, vertical);
+                border: 1px solid #CCC;
+                &:hover, &:focus {
+                    background: #FFF;
+                    border: 1px solid $aHover !important;
+                }
+            }
+            >input[type="text"] {
+                width: calc(100% - 3.5em);
+            }
+        }
+        // input
+        input[type="text"] {}
+        // 多個下拉
+        .select {
+            display: flex;
+            flex-flow: row wrap;
+            select {
+                margin: 0 .5em 0em 0;
+                flex: 1 1 calc(50% - .5em);
+            }
+        }
+        // pickBtn
+        .pickBtn {
+            display: flex;
+            position: relative;
+            flex: 1 1 100%;
+            input[type="text"] {
+                width: 100%;
+                flex: 0 1 100%;
+                padding-right: 7em;
+            }
+            .btn {
+                position: absolute;
+                padding: .1em 1em;
+                max-width: auto;
+                right: .1em;
+            }
+        }
+    }
+}
+//---------------------------------------------form setting--------//
+form, div {
+    .form_grp,
+    .check_grp,
+    .radio_grp,
+    .btn_grp,
+    .upload_grp {
+        //margin-bottom: .2em;
+        // max-width: 70em;
+        // margin: .2em auto .2em;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+    }
+
+    .btn_grp{
+        justify-content: center;
+        margin: auto;
+    }
+
+    .check_grp,
+    .radio_grp {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: .875rem;
+        position: relative;
+        // radio與check個別行內設定
+        label {
+            position: relative;
+            // margin-bottom: .5em;
+            margin-bottom: .3em;
+            margin-top: .3em;
+            input {
+                position: relative;
+                z-index: 1;
+                border-radius: .25em;
+                &~span {}
+                &:checked {
+                    &~span:after {
+                        position: absolute;
+                        width: 1em;
+                        height: 1em;
+                        border-radius: 50%;
+                        background: lighten($form-focus, 10);
+                        content: "";
+                        left: .05em;
+                        top: .3em;
+                        z-index: 0;
+                        animation: ripple 0.35s linear;
+                    }
+                }
+            }
+        }
+        &.form_inline {
+            flex-flow: row wrap;
+            label {
+                flex: 0 1 auto;
+                margin-right: 1em;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .radio_grp {
+        label {
+            input {
+                border-radius: 50%;
+            }
+        }
+    }
+    .form_grp,
+    .upload_grp {
+        // 文字表單個別行內設定
+        &.form_inline {
+            label {
+                display: inline-block;
+                margin-right: .5em;
+            }
+            input,
+            textarea,
+            select {
+                width: auto;
+            }
+            input[type="radio"] {
+                width: 1em;
+            }
+        }
+    }
+}
+//---------------------------------------------下拉選單--------//
+label,
+legend {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include screen('xs_mobile') {
+        display: block;
+    }
+    &.inline {
+        input,
+        select,
+        textarea {
+            width: auto;
+        }
+    }
+}
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+//---------------------------------------------預設設定--------//
+input,
+textarea,
+select,
+button {
+    @include formStyle(); // 預設載入formStyle設定
+}
+input,
+select,
+textarea {
+    width: 100%;
+    -webkit-appearance: none; //清除 safari 的預設樣式
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: bold;
+    background: #F4F4F4;
+}
+select {
+    transition: none !important;
+    font-weight: normal;
+}
+textarea {
+    min-height: 10em;
+    background: #FCFCFC;
+    &:focus {
+        background: #F5F5F5;
+    }
+}
+//---------------------------------------------文字輸入表單--------//\
+form{
+    input[type="text"],
+    input[type="password"],
+    input[type="file"],
+    input[type="tel"],
+    textarea {
+        &::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: darken($color-gray, 20);
+        }
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            color: darken($color-gray, 20);
+        }
+        &:-ms-input-placeholder {
+            /* IE 10+ */
+            color: darken($color-gray, 20);
+        }
+        &:-moz-placeholder {
+            /* Firefox 18- */
+            color: darken($color-gray, 20);
+        }
+    }
+    button,
+    input[type="button"],
+        {
+        @extend %btn;
+        @include btn_setting($form-btn, #FFF);
+        text-shadow: none !important;
+    }
+    input[type="submit"] {
+        @extend %btn;
+        @include btn_setting($form-btn, #FFF);
+    }
+    textarea {
+        @include formStyle();
+        // height: 5em;
+        align-self: stretch;
+        background:#F4F4F4;
+        // overflow-y: scroll;
+        @include screen('xs_mobile') {
+            width: 100%;
+        }
+    }
+    input {
+        &[type="text"], &[type="calendar"], &[type="email"], &[type="tel"], &[type="time"], , &[type="url"] {
+            border-radius: .2em;
+            background: #F4F4F4;
+            &:hover, &:focus {
+                background: #F5F5F5;
+            }
+        }
+    }
+    input[type="text"]:focus,
+    input[type="reset"]:focus,
+    input[type="file"]:focus,
+    input[type="tel"]:focus,
+    input[type="password"]:focus,
+    textarea:focus,
+    select:focus {
+        @include box-shadow(0px 0px 0px 1px transparent);
+        outline: none;
+    }
+    select:focus {
+        background: url(../images/basic/icon_select_arrow.svg) no-repeat right center #F5F5F5;
+        background-size: 20px;
+    }
+    //
+    input[type="file"] {}
+}
+//---------------------------------------------下拉選單--------//
+select {
+    line-height: 3em;
+    font-weight: bold;
+    height: 3em;
+    padding: 0 24px 0 .5em;
+    border-radius: 0;
+    background: url(../images/basic/icon_select_arrow.svg) no-repeat right center #F5F5F5;
+    background-size: 20px;
+    option {
+        outline: none;
+        border: none;
+    }
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+
+    +.form_content{ margin-left: 1em; }
+}
+.select {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    .select-value {
+        flex: 1 1 100%;
+        @include formStyle;
+        background: url(../images/basic/icon_select_arrow.svg) no-repeat right center;
+        background-size: 20px;
+        height: 2.4em;
+    }
+    .select-option {
+        display: none;
+    }
+}
+//---------------------------------------------reset--------//
+// input[type="reset"] {
+//     @extend %btn;
+//     @include btn_setting(darken($color-gray, 20), #FFF);
+//     text-shadow: none;
+// }
+//---------------------------------------------checkbox & radio--------//
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 0px .45em 0 0;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #f7f6ee;
+    border: 2px solid $color-gray;
+    transition: none;
+    min-width: 15.75px;
+    &:focus {
+        box-shadow: none;
+    }
+}
+input[type="radio"] {
+    border-radius: 50%;
+}
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    border-color: $form-btn;
+    background-color: $form-btn;
+    outline: none;
+}
+input[type="checkbox"]:checked {
+    background-image: url(../images/basic/icon_checked.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 98%;
+    box-shadow: $form-btn 0 0 0 1px;
+
+    @include border-radius(2px);
+}
+input[type="radio"]:checked {
+    box-shadow: #fff 0 0 0 2px inset, $form-btn 0 0 0 1px;
+}
+//---------------------------------------------readonly disable -------//
+input[readonly],
+input[disabled] {
+    // background: #EAEAEA !important;
+    background: #fff !important;
+    box-shadow: inset 0 0 0 1px #f5f5f5;
+    color: #222;
+    &~label {
+        color: #888;
+    }
+    &:hover,
+    &:focus {
+        // background: lighten($color-gray, 10) !important;
+        // color: darken($color-gray, 30) !important;
+        // border-color: darken($color-gray, 10) !important;
+        // box-shadow: none !important;
+        cursor: not-allowed;
+    }
+}
+// 檔案上傳
+// https://codepen.io/shubhamc_007/pen/oZyodd
+.upload_grp {
+    position: relative;
+    input[readonly],
+    input[disable] {
+        background: transparent;
+        color: #666;
+    }
+    .upload_btn {
+        position: absolute;
+        overflow: hidden;
+        top: 0px;
+        right: 2px;
+        @extend %btn;
+        @include btn_setting($form-btn, #FFF);
+        padding: .2em 1em !important;
+        @include border-radius(4px);
+        &:hover,
+        &:focus {
+            cursor: pointer !important;
+        }
+    }
+}
+input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+//---------------------------------------------captcha--------//
+img.captcha {
+    display: inline-block;
+    vertical-align: middle;
+    height: 2.5em;
+    width: auto;
+    margin-bottom: .5em;
+    &+input {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+    ~img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 2.5em;
+        margin-bottom: .5em;
+    }
+}
+//---------------------------------------------必填欄位說明--------//
+abbr {
+    border-bottom: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: $color-red !important;
+    margin: 0 .2em;
+}
+// checkswitch
+.checkSwitch {
+    // border: 2px solid #aaa;
+    box-sizing: content-box;
+    display: inline-block;
+    cursor: pointer;
+    height: 1.55rem;
+    width: 1.55rem * 1.8;
+    position: relative;
+    input {
+        position: absolute;
+        display: none;
+        &:hover, &:focus {
+            cursor: pointer;
+        }
+    }
+    &_switch {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        border-radius: 10rem;
+        background: $color-gray;
+        box-shadow: 0px 0px 0px 2px $color-gray inset;
+        &:before {
+            content: "";
+            position: absolute;
+            background: #FFF;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            top: .25rem;
+            left: .3rem;
+            z-index: 9;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+            transition: transform 200ms ease, background 200ms;
+        }
+        &:after {
+            position: absolute;
+            content: "關閉";
+            right: -2.5rem;
+            font-size: .938rem;
+            color: #888;
+            white-space: nowrap;
+        }
+    }
+    input:checked+&_switch {
+        background: #2fe60b;
+        box-shadow: 0px 0px 0px 2px #2fe60b inset;
+        &:before {
+            transform: translate(125%, 0);
+            box-shadow: none;
+        }
+        &:after {
+            content: "開啟";
+            color: $color-green;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 9998;
+    // @include box-sizing(border-box);
+    // @include clearfix;
+    text-align: left;
+    font-size: 0.813em;
+    background: #4a4a4a;
+    color: #fff;
+    width: 100%;
+    p{
+        text-align: center;
+        margin: .4em 0;
+        span{
+            padding: 0 .5em;
+        }
+    }
+}

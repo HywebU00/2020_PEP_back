@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>植物疫情資訊管理及協作平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <!-- highlight -->
+    <!-- <link rel="stylesheet" href="vendor/highlight/github-gist.css"> -->
+</head>
+
+<body>
+    <!-- pop up-->
+    <div id="" class="modal">
+        <h2>新增調查點</h2>
+        <section>
+            <label for="">方法一：經緯度定位</label>
+            <div class="flex">
+                <select name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">項目一</option>
+                    <option value="">項目二</option>
+                </select>
+                <input name="" type="text" value="">
+                <input name="" type="text" value="">
+                <button class="btn btn-secondary">確認定位</button>
+            </div>
+        </section>
+        <section>
+            <label for="">方法二：地址定位</label>
+            <div class="flex">
+                <input name="" type="text" value="" placeholder="請輸入地址">
+                <button class="btn btn-secondary">確認定位</button>
+            </div>
+        </section>
+        <section>
+            <label for="">方法三：區域範圍定位</label>
+            <div class="flex">
+                <select name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">項目一</option>
+                    <option value="">項目二</option>
+                </select>
+                <select name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">項目一</option>
+                    <option value="">項目二</option>
+                </select>
+                <button class="btn btn-secondary">確認定位</button>
+            </div>
+        </section>
+        <h3>請點選位置：</h3>
+        <div id="map">圖台</div>
+        <div class="btn_grp">
+            <input type="submit" class="btn btn-primary" value="確定送出">
+            <input type="button" class="btn btn-secondary" value="暫存">
+            <input type="button" class="btn btn-normal" value="取消">
+            <!--  -->
+            <input type="submit" class="btn btn-primary" readonly="" value="確定送出">
+            <input type="button" class="btn btn-secondary" readonly="" value="暫存">
+            <input type="button" class="btn btn-normal" readonly="" value="取消">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- header load header.htm -->
+        <header></header>
+        <div class="main">
+            <!-- aside load aside.htm -->
+            <aside></aside>
+            <!-- 主要內容區 -->
+            <div class="content">
+                <!-- 最新消息 -->
+                <a href="#" id="switch_news">最新消息</a>
+                <section id="news">
+                    <a href="#" id="close">關閉</a>
+                    <h3>最新<span>消息</span></h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                新系統上線，如有任何操作上的問題，請參閱<span>操作手冊</span>與<span>常見問題</span>，或者是撥打服務專線 02-2395-6966 ext 2501
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                教育訓練課程開放報名，歡迎立即前往<span>線上報名</span>教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往
+                            </a>
+                        </li>
+                    </ul> 
+                    <a href="#" class="btn more">更多最新消息</a>
+                </section>
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="light.htm">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
+                </div>
+                <!-- gird section -->
+                <div class="grid">
+                    <div class="container">
+                        <div class="title">
+                            <h2>填寫調查表–荔枝椿象</h2>
+                            <!-- function功能區塊 -->
+                            <div class="function">
+                                <ul>
+                                    <li><a href="javascript:history.back()" class="back">回上一頁</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- flex-12  -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <!-- steps -->
+                                    <div class="steps">
+                                        <ul>
+                                            <li class="Pass">
+                                                <span></span>
+                                                <p>step 1</p>
+                                            </li>
+                                            <li class="Now">
+                                                <span></span>
+                                                <p>step 2</p>
+                                            </li>
+                                            <li>
+                                                <span></span>
+                                                <p>step 3</p>
+                                            </li>
+                                            <li>
+                                                <span></span>
+                                                <p>step 4</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="_head">
+                                        <h3>step 2</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <div class="table_wrapper th_left">
+                                            <table class="table_hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">填表人</th>
+                                                        <td><input name="" type="text" value="游世豪" readonly=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">填表單位</th>
+                                                        <td><input name="" type="text" value="虎尾農會" readonly=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th rowspan="2">調查點</th>
+                                                        <th><abbr>*</abbr>鄉鎮區：</th>
+                                                        <td>
+                                                            <select id="" name="">
+                                                                <option>請選擇</option>
+                                                                <option>項目1</option>
+                                                                <option>項目2</option>
+                                                                <option selected="">項目3</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><abbr>*</abbr>調查點：</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <select id="" name="">
+                                                                    <option>請選擇</option>
+                                                                    <option>項目1</option>
+                                                                    <option>項目2</option>
+                                                                    <option selected="">項目3</option>
+                                                                </select>
+                                                                <span>座標：120.631484, 24.163441 ／212553.88, 2673173.8</span>
+                                                                <button class="btn btn-secondary openModal" id=""><i class="i_position"></i>立即定位</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>調查日期</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <label for="">起日：</label>
+                                                                <input name="" type="date" value="">
+                                                                <label for="">迄日：</label>
+                                                                <input name="" type="date" value="">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>樹齡</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <input name="" type="text" value="1">年
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>樹高</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <input name="" type="text" value="4">尺
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>標題</th>
+                                                        <td>
+                                                            <select id="" name="">
+                                                                <option>請選擇</option>
+                                                                <option>項目1</option>
+                                                                <option>項目2</option>
+                                                                <option selected="">項目3</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>標題</th>
+                                                        <td>
+                                                            <div class="radio_grp form_inline">
+                                                                <label><input name="radioSample" type="radio" value="" checked=""><span>項目1</span></label>
+                                                                <label><input name="radioSample" type="radio" value=""><span>項目2</span></label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <th colspan="2"><abbr>*</abbr>調查工具/方式</th>
+                                                        <td>
+                                                            <div class="check_grp form_inline">
+                                                                <label><input name="" type="checkbox" value="" checked=""><span>選項一</span></label>
+                                                                <label><input name="" type="checkbox" value=""><span>選項二</span></label>
+                                                                <label><input name="" type="checkbox" value=""><span>選項三</span></label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">亞主枝調查結果</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <button class="btn btn-primary"><i class="i_add"></i>新增亞主枝</button>
+                                                            </div>
+                                                            <!-- 1 -->
+                                                            <section class="branch">
+                                                                <div class="flex">
+                                                                    <h3>亞主枝 1</h3>
+                                                                    <button class="btn btn-secondary"><i class="i_add"></i>新增枝條</button>
+                                                                </div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <th>枝條</th>
+                                                                        <th>對象生長階段</th>
+                                                                        <th>有無</th>
+                                                                        <th>數量</th>
+                                                                    </thesad>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td rowspan="3">枝條1</td>
+                                                                            <td>成蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample2-1" type="radio" value="" checked=""><span>有</span></label>
+                                                                                    <label><input name="radioSample2-1" type="radio" value=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="3"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>若蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample2-2" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample2-2" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>卵(片)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample2-3" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample2-3" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td rowspan="3">枝條2</td>
+                                                                            <td>成蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample3-1" type="radio" value="" checked=""><span>有</span></label>
+                                                                                    <label><input name="radioSample3-1" type="radio" value=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="3"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>若蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample3-2" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample3-2" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>卵(片)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample3-3" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample3-3" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </section>
+                                                            <!-- 2 -->
+                                                            <section class="branch">
+                                                                <div class="flex">
+                                                                    <h3>亞主枝 2</h3>
+                                                                    <button class="btn btn-secondary"><i class="i_add"></i>新增枝條</button>
+                                                                </div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>枝條</th>
+                                                                            <th>對象生長階段</th>
+                                                                            <th>有無</th>
+                                                                            <th>數量</th>
+                                                                        </tr>
+                                                                    </thesad>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td rowspan="3">枝條1</td>
+                                                                            <td>成蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample2" type="radio" value="" checked=""><span>有</span></label>
+                                                                                    <label><input name="radioSample2" type="radio" value=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="3"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>若蟲(隻)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample3" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample3" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>卵(片)</td>
+                                                                            <td>
+                                                                                <div class="radio_grp form_inline">
+                                                                                    <label><input name="radioSample4" type="radio" value=""><span>有</span></label>
+                                                                                    <label><input name="radioSample4" type="radio" value="" checked=""><span>無</span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><input name="" type="text" value="0" readonly=""></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </section>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">有若蟲枝條總數</th>
+                                                        <td><input name="" type="text" value="0" readonly=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">枝條總數</th>
+                                                        <td><input name="" type="text" value="2" readonly=""></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="btn_grp">
+                                                <input type="submit" class="btn btn-primary" value="確定送出">
+                                                <input type="button" class="btn btn-secondary" value="暫存">
+                                                <input type="button" class="btn btn-normal" value="取消">
+                                                <!--  -->
+                                                <input type="submit" class="btn btn-primary" readonly="" value="確定送出">
+                                                <input type="button" class="btn btn-secondary" readonly="" value="暫存">
+                                                <input type="button" class="btn btn-normal" readonly="" value="取消">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 填寫調查表異動紀錄 -->
+                                    <div class="_head">
+                                        <h3>填寫調查表異動紀錄</h3>
+                                    </div>
+                                    <div class="_content">
+                                        <div class="table_wrapper">
+                                            <table class="table_hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>標題</th>
+                                                        <th>標題</th>
+                                                        <th>標題</th>
+                                                        <th>標題</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                        <td>內容</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                <span>行政院農業委員會動植物防疫檢疫局</span>
+                <span>10070台北市和平西路二段100號11樓&nbsp;&nbsp;電話：(02)2343-1401&nbsp;&nbsp;傳真：(02)2332-2200</span>
+                <span>Copyright© 2006 All rights are reserved.&nbsp;版權所有，轉載必究</span>
+            </p>
+        </footer>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/pattern-fill.js"></script> -->
+    <script>
+    $('header').load("header.htm");
+    $('aside').load("aside.htm");
+    </script>
+</body>

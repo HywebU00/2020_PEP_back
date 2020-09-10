@@ -1,0 +1,190 @@
+.chart_content figure>div{
+    height: 250px;
+}
+.chart_content figure>div.h_400{
+    height: 250px;
+}
+.chart_content figure>div.h_200{
+    height: 250px;
+}
+
+.highcharts-tooltip-box {
+        fill: white;
+        fill-opacity: 0.6;
+        stroke-width: 1;
+        box-shadow:0px 0px 15px rgba(0,0,0,.5);
+    }
+    .highcharts-tooltip text {
+        fill: #222;
+        stroke:none;
+        // text-shadow: 0 0 3px black;
+    }
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 150px;
+    max-width: 100%;
+    margin: .5em auto;
+}
+.highcharts-pane-group{
+    width:100% !important;
+    path{
+        fill:#DDD !important;
+        stroke:#DDD !important;
+    }
+}
+.highcharts-background{
+    background:transparent !important;
+    fill:transparent !important;
+}
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+.red{
+    .highcharts-color-0{
+        fill: $color-red;
+    stroke: $color-red;
+    }
+}
+.green{
+    .highcharts-color-0{
+        fill: $color-green;
+    stroke: $color-green;
+    }
+}
+.yellow{
+    .highcharts-color-0{
+        fill: $color-yellow;
+        stroke: $color-yellow;
+    }
+}
+.gray{
+    .highcharts-color-0{
+        fill: darken($color-gray, 15);
+    stroke: darken($color-gray, 15);
+    }
+}
+
+/* Link the series colors to axis colors */
+.highcharts-color-0 {
+    fill: #20A4F3;
+    stroke: #20A4F3;
+}
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+    stroke: #20A4F3;
+}
+.highcharts-axis.highcharts-color-0 text {
+    fill: #20A4F3;
+}
+.highcharts-color-1 {
+    fill: #54CEC3;
+    stroke: #54CEC3;
+}
+.highcharts-axis.highcharts-color-1 .highcharts-axis-line {
+    stroke: #54CEC3;
+}
+.highcharts-axis.highcharts-color-1 text {
+    fill: #54CEC3;
+}
+
+
+.highcharts-yaxis .highcharts-axis-line {
+    stroke-width: 2px;
+}
+
+.highcharts-color-0 {
+        fill: #20A4F3;
+        stroke:none !important;
+        tspan {
+            fill: #20A4F3;
+        }
+    }
+    .highcharts-color-1 {
+        fill: #54CEC3;
+        stroke:none !important;
+        tspan {
+            fill: #54CEC3;
+        }
+    }
+    .highcharts-color-2 {
+        fill: #ffbc08;
+        stroke:none !important;
+        tspan {
+            fill: #ffbc08;
+        }
+    }
+    .highcharts-color-3 {
+        fill: #fe7b62;
+        stroke:none !important;
+        tspan {
+            fill: #fe7b62;
+        }
+    }
+    .highcharts-color-4 {
+        fill: #00b44b;
+        stroke:none !important;
+        tspan {
+            fill: #00b44b;
+        }
+    }
+    .highcharts-color-5 {
+        fill: #2869b9;
+        stroke:none !important;
+        tspan {
+            fill: #2869b9;
+        }
+    }
+    .highcharts-color-6 {
+        fill: #d84400;
+        stroke:none !important;
+        tspan {
+            fill: #d84400;
+        }
+    }
+    .highcharts-color-7 {
+        fill: #009e7a;
+        stroke:none !important;
+        tspan {
+            fill: #009e7a;
+        }
+    }
+    .highcharts-color-8 {
+        fill: #2e3c56;
+        stroke:none !important;
+        tspan {
+            fill: #2e3c56;
+        }
+    }
+    .highcharts-color-9 {
+        fill: #754a28;
+        stroke:none !important;
+        tspan {
+            fill: #754a28;
+        }
+    }
+
+
+
