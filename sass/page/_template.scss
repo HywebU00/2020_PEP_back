@@ -598,6 +598,13 @@ body {
         }
         b{ color: $importantColor; }
     }
+
+    @include screen('mobile') {
+        span.item{
+            display: inline-block;
+            margin: .5em 0;
+        }
+    }
 }
 // 反饋
 .feedback{
