@@ -423,6 +423,14 @@ $(function(){
         $('.main').removeClass('small_size').addClass('large_size');
     });
 
+    // 當._head 內，只有一個div && classname = .quick_btn
+    var $item = $('._content > ._head div').length,
+        $btn = $('.quick_btn');
+    if ( $item == 1 && $('div').hasClass('quick_btn') ) {
+        // alert('符合');
+        $('._content > ._head').css("flex-flow", "row-reverse wrap");
+    }
+
     /*-----------------------------------*/
     ////////////////多組Tab////////////////
     /*-----------------------------------*/

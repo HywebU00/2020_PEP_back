@@ -200,6 +200,7 @@ body {
     padding: .5em 1em;
     border-radius: 0 0 4px 4px;
 }
+
 #news{
     position: fixed;
     z-index: 2;
@@ -335,6 +336,7 @@ body {
     }
 }
 
+// 步驟
 .steps{
     padding: 1em 0;
     ul{
@@ -580,6 +582,32 @@ body {
                 margin-top: 1.5em;
             }
         }
+    }
+}
+// 查詢條件
+.query-conditions{
+    margin: .9em 0;
+    >p{}
+    span.item{
+        padding: 0 .9em;
+        border-right: solid 1px #aaa;
+        span{
+            &:after{
+                content: '：';
+            }
+        }
+        b{ color: $importantColor; }
+    }
+}
+// 反饋
+.feedback{
+    text-align: center;
+    padding: 2em 1.5em;
+    margin: .25em 0;
+    background: #f5f5f5;
+    b{
+        color: $importantColor;
+        padding: .25em 1em;
     }
 }
 
