@@ -485,6 +485,28 @@ $(function(){
         // alert('有');
         $(this).parents('.result').siblings('.form_box').toggle();
     });
+
+    /*-----------------------------------*/
+    ///////////////置頂go to top////////////
+    /*-----------------------------------*/
+    $(window).bind('scroll', function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+    /*-----------------------------------*/
+    /////click event to scroll to top//////
+    /*-----------------------------------*/
+    $('.scrollToTop').click(function(e) {
+        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutExpo');
+        e.preventDefault();
+    });
+    $('.scrollToTop').keydown(function(e) {
+        _body.find('a:first').focus();
+        e.preventDefault();
+    });
 })
 
 

@@ -296,30 +296,50 @@ body {
             }
             &>a {
                 display: block;
+                padding: .25em 0;
                 padding-left: 2em;
                 position: relative;
                 line-height: 1.45em;
                 color: $color-word;
-                &:hover {
-                    color: $aHover;
-                }
+
+                @extend %flex;
+                justify-content: flex-start;
+
+                &:hover { color: $aHover; }
                 .num {
                     width: 1.5em;
                     text-align: right;
                     position: absolute;
-                    top: 0;
+                    top: .25em;
                     left: 0;
                     &:after {
                         content: ".";
                         display: inline-block;
                     }
                 }
+
+                span{
+                    &.dept{ flex: 0 0 auto; }
+                    &:last-child{}
+                }
+
+                @include screen("mobile") {
+                    flex-flow: row wrap;
+                    span{
+                        &.dept{ padding: 0; }
+                        &:last-child{
+                            flex: 0 0 100%;
+                            padding: .25em 0;
+                        }
+                    }
+                }
+
             }
             span.dept {
                 // display: block;
                 font-size: .938em;
                 // background: #eee;
-                padding: .25em 1em;
+                padding: 0 1em;
                 border-radius: 3px;
                 color: #313131;
                 @include screen("mobile") {
