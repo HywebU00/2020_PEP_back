@@ -16,4 +16,22 @@ footer {
             padding: 0 .5em;
         }
     }
+
+    @include screen('tablet') {
+        padding: 0 1em;
+        p{
+            span{
+                &:last-child{ display: block; }
+            }
+        }
+    }
+    @include screen('mobile') {
+        position: static;
+        padding: .5em 1em;
+        p{
+            span{
+                display: block;
+            }
+        }
+    }
 }
