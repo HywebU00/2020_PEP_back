@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>植物疫情資訊管理及協作平台</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/supercms.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+    <!-- highlight -->
+    <!-- <link rel="stylesheet" href="vendor/highlight/github-gist.css"> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header load header.htm -->
+        <header></header>
+        <div class="main">
+            <!-- aside load aside.htm -->
+            <aside></aside>
+            <!-- 主要內容區 -->
+            <div class="content">
+                <!-- 最新消息 -->
+                <a href="#" id="switch_news">最新消息</a>
+                <section id="news">
+                    <a href="#" id="close">關閉</a>
+                    <h3>最新<span>消息</span></h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                新系統上線，如有任何操作上的問題，請參閱<span>操作手冊</span>與<span>常見問題</span>，或者是撥打服務專線 02-2395-6966 ext 2501
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <time>109.03.26</time>
+                                教育訓練課程開放報名，歡迎立即前往<span>線上報名</span>教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往教育訓練課程開放報名，歡迎立即前往
+                            </a>
+                        </li>
+                    </ul> 
+                    <a href="#" class="btn more">更多最新消息</a>
+                </section>
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="light.htm">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
+                </div>
+                <!-- gird section -->
+                <div class="grid">
+                    <div class="container">
+                        <div class="title">
+                            <h2>執行單位設定</h2>
+                            <!-- function功能區塊 -->
+                            <div class="function">
+                                <ul>
+                                    <li><a href="javascript:history.back()" class="back">回上一頁</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- flex-12  -->
+                        <div class="flex-12">
+                            <div class="col ">
+                                <div class="content_block">
+                                    <!-- steps -->
+                                    <!-- <div class="steps">
+                                        <ul>
+                                            <li class="Pass">
+                                                <span></span>
+                                                <p>step 1</p>
+                                            </li>
+                                            <li class="Now">
+                                                <span></span>
+                                                <p>step 2</p>
+                                            </li>
+                                            <li>
+                                                <span></span>
+                                                <p>step 3</p>
+                                            </li>
+                                            <li>
+                                                <span></span>
+                                                <p>step 4</p>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                    <div class="_head">
+                                        <h3>title</h3>
+                                        <div class="quick_btn">
+                                            <button class="btn btn-orange"><i class="i_add"></i>新增</button>
+                                            <!-- <button class="btn btn-orange"><i class="i_search"></i>查詢</button> -->
+                                        </div>
+                                    </div>
+                                    <div class="_content">
+                                        <!-- 表格樣式 -->
+                                        <div class="table_wrapper">
+                                            <table class="table_hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>&nbsp;</th>
+                                                        <th>選擇</th>
+                                                        <th>階段名稱</th>
+                                                        <th>階段代碼</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>開始</td>
+                                                        <td><input name="radioSample" type="radio" value="" checked=""></td>
+                                                        <td>通報</td>
+                                                        <td>A</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td><input name="radioSample" type="radio" value=""></td>
+                                                        <td>...</td>
+                                                        <td>...</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>結束</td>
+                                                        <td><input name="radioSample" type="radio" value=""></td>
+                                                        <td>結案</td>
+                                                        <td>Z</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table_wrapper th_left">
+                                            <table class="">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>流程代碼可處理此階段的權限</th>
+                                                        <td>
+                                                            <!-- 執行人員 -->
+                                                            <div class="add_form">
+                                                                <section class="result">
+                                                                    <input name="" type="text" value="動植物防疫檢疫局, 智庫人員" style="width: 50%;" autocomplete="off">
+                                                                    <button class="btn btn-secondary switch"><i class="i_edit"></i>權限設定</button>
+                                                                </section>
+                                                                <section class="form_box">
+                                                                    <h3>權限設定</h3>
+                                                                    <!-- flex-12 -->
+                                                                    <div class="flex-12">
+                                                                        <div class="col ">
+                                                                            <!-- 中央區塊 -->
+                                                                            <div class="content_block">
+                                                                                <!-- <div class="_head">
+                                                                                    <h3>機關單位</h3>
+                                                                                    <div class="quick_btn">
+                                                                                        <button class="btn btn-orange"><i class="i_add"></i>新增組織目錄</button>
+                                                                                    </div>
+                                                                                </div> -->
+                                                                                <div class="_content">
+                                                                                    <div class="flex">
+                                                                                        <div class="box">
+                                                                                            <h4>所有名單：</h4>
+                                                                                            <div class="form_inline">
+                                                                                                <div class="form_grp">
+                                                                                                    <input name="" type="text" placeholder="請輸入關鍵字">
+                                                                                                    <input name="" type="submit" class="btn btn-secondary" value="送出" />
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="item_list">
+                                                                                                <span><b>農業試驗所</b></span>
+                                                                                                <span><b>黃興換1</b>台中市政府</span>
+                                                                                                <span><b>黃興換2</b>台中市政府</span>
+                                                                                                <span><b>黃興換3</b>台中市政府</span>
+                                                                                                <span><b>羅伯特1</b>台中市政府</span>
+                                                                                                <span><b>羅伯特2</b>台中市政府</span>
+                                                                                                <span><b>羅伯特3</b>台中市政府</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="box">
+                                                                                            <h4>已加入：</h4>
+                                                                                            <div class="item_list added">
+                                                                                                <span><b>動植物防疫檢疫局</b></span>
+                                                                                                <span><b>智庫人員</b></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- btn -->
+                                                                                    <div class="btn_grp">
+                                                                                        <input type="submit" class="btn btn-primary" value="編修存檔">
+                                                                                        <input type="reset" class="btn btn-secondary" value="清除重填">
+                                                                                        <input type="button" class="btn btn-normal" value="取消">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                                <!-- <div class="help">說明文字</div> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>適用表單</th>
+                                                        <td>
+                                                            <select name="" id="selectSample">
+                                                                <option value="">選項一</option>
+                                                                <option value="">選項二</option>
+                                                                <option value="">選項三</option>
+                                                                <option value="">選項四</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>流程經過的階段</th>
+                                                        <td>
+                                                            <div class="check_grp">
+                                                                <label><input type="checkbox" value="" checked="">選項一</label>
+                                                                <label><input type="checkbox" value="">選項二</label>
+                                                                <label><input type="checkbox" value="">選項三</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="btn_grp">
+                                            <input type="submit" class="btn btn-primary used" value="編修存檔">
+                                            <input type="reset" class="btn btn-secondary" value="清除重填">
+                                            <input type="button" class="btn btn-normal" value="取消">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                <span>行政院農業委員會動植物防疫檢疫局</span>
+                <span>10070台北市和平西路二段100號11樓&nbsp;&nbsp;電話：(02)2343-1401&nbsp;&nbsp;傳真：(02)2332-2200</span>
+                <span>Copyright© 2006 All rights are reserved.&nbsp;版權所有，轉載必究</span>
+            </p>
+        </footer>
+    </div>
+    <!-- JS-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- template customize js -->
+    <script src="js/customize.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/pattern-fill.js"></script> -->
+    <script>
+    $('header').load("header.htm");
+    $('aside').load("aside.htm");
+    </script>
+</body>

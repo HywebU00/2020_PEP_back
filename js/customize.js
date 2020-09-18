@@ -486,6 +486,11 @@ $(function(){
         $(this).parents('.result').siblings('.form_box').toggle();
     });
 
+    $('.quick_btn .switch').click(function(){
+        // alert('有');
+        $(this).parents('.quick_btn').siblings('.show_box').toggle();
+    });
+
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
     /*-----------------------------------*/

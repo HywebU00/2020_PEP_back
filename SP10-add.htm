@@ -60,7 +60,7 @@
                 <div class="grid">
                     <div class="container">
                         <div class="title">
-                            <h2>執行單位設定</h2>
+                            <h2>新增案件流程</h2>
                             <!-- function功能區塊 -->
                             <div class="function">
                                 <ul>
@@ -95,68 +95,75 @@
                                     </div> -->
                                     <div class="_head">
                                         <h3>title</h3>
-                                        <div class="quick_btn">
+                                        <!-- <div class="quick_btn">
                                             <button class="btn btn-orange"><i class="i_add"></i>新增</button>
-                                            <!-- <button class="btn btn-orange"><i class="i_search"></i>查詢</button> -->
-                                        </div>
+                                            <button class="btn btn-orange"><i class="i_search"></i>查詢</button>
+                                        </div> -->
                                     </div>
                                     <div class="_content">
-                                        <!-- 表格樣式 -->
-                                        <div class="table_wrapper">
+                                        <div class="table_wrapper th_left">
                                             <table class="table_hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>流程代碼</th>
-                                                        <th>流程名稱</th>
-                                                        <th>流程經過的階段</th>
-                                                        <th>階段設定</th>
-                                                        <th>修改</th>
-                                                        <th>刪除</th>
-                                                    </tr>
-                                                </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>FL01</td>
-                                                        <td>全民通報</td>
-                                                        <td>通報→【立案前調查, 鑑定】→結案</td>
-                                                        <td><button class="btn_round setting"><i class="i_setting"></i></button></td>
-                                                        <td><button class="btn_round edit"><i class="i_edit"></i></button></td>
-                                                        <td><button class="btn_round delet"><i class="i_close"></i></button></td>
+                                                        <th><abbr>*</abbr>流程代碼</th>
+                                                        <td><input name="" type="text" value="(系統自動產生)" readonly=""></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>FL02</td>
-                                                        <td>全民通報</td>
-                                                        <td>通報→【立案前調查, 鑑定】→結案</td>
-                                                        <td><button class="btn_round setting"><i class="i_setting"></i></button></td>
-                                                        <td><button class="btn_round edit"><i class="i_edit"></i></button></td>
-                                                        <td><button class="btn_round delet"><i class="i_close"></i></button></td>
+                                                        <th><abbr>*</abbr>流程名稱</th>
+                                                        <td><input name="" type="text" value="專家通報" readonly=""></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>FL03</td>
-                                                        <td>全民通報</td>
-                                                        <td>通報→【立案前調查, 鑑定】→結案</td>
-                                                        <td><button class="btn_round setting"><i class="i_setting"></i></button></td>
-                                                        <td><button class="btn_round edit"><i class="i_edit"></i></button></td>
-                                                        <td><button class="btn_round delet"><i class="i_close"></i></button></td>
+                                                        <th>流程說明</th>
+                                                        <td><textarea id="textareaSample1" rows="3">甲項檢疫有害生物、新紀錄有害生物、具重大危害風險之有害生物</textarea></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>流程經過的階段</th>
+                                                        <td>
+                                                            <div class="form_grp form_inline">
+                                                                <label for="">開始</label>
+                                                                <input name="" type="text" value="通報(A)" readonly="">
+                                                            </div>
+                                                            <div class="form_grp form_inline">
+                                                                <label for="">經過</label>
+                                                                <div class="check_grp form_inline">
+                                                                    <label><input name="" type="checkbox" value="" checked>選項一</label>
+                                                                    <label><input name="" type="checkbox" value="">選項二</label>
+                                                                    <label><input name="" type="checkbox" value="">選項三</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form_grp form_inline">
+                                                                <label for="">結束</label>
+                                                                <input name="" type="text" value="結案(Z)" readonly="">
+                                                            </div>
+
+                                                            <!-- <div class="check_grp form_inline">
+                                                                <label for="selectSample">選單</label>
+                                                                <label><input name="" type="checkbox" value="" checked=""><span>選項一</span></label>
+                                                                <label><input name="" type="checkbox" value=""><span>選項二</span></label>
+                                                                <label><input name="" type="checkbox" value=""><span>選項三</span></label>
+                                                            </div> -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><abbr>*</abbr>啟用/關閉</th>
+                                                        <td>
+                                                            <div class="form_content">
+                                                                <div class="checkSwitch">
+                                                                    <label>
+                                                                        <input name="checkboxSample1" type="checkbox" value="">
+                                                                        <div class="checkSwitch_switch"></div>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <!-- 頁碼 -->
-                                        <div class="pagination">
-                                            <ul class="page">
-                                                <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
-                                                <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
-                                                <li class="active"><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">...</a></li>
-                                                <li><a href="#">8</a></li>
-                                                <li><a href="#">9</a></li>
-                                                <li><a href="#">10</a></li>
-                                                <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
-                                                <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
-                                            </ul>
+                                        <div class="btn_grp">
+                                            <input type="submit" class="btn btn-primary used" value="編修存檔">
+                                            <input type="reset" class="btn btn-secondary" value="清除重填">
+                                            <input type="button" class="btn btn-normal" value="取消">
                                         </div>
                                     </div>
                                 </div>

@@ -505,9 +505,124 @@ body {
         }
     }
 }
+// 燈號說明
+.show_box{
+    padding: 1em;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    width: 100%;
+    p{ margin-bottom: .5em !important; }
+    span{
+        width: calc(25% - 6px);
+        display: inline-block;
+        margin-bottom: .25em;
+        vertical-align: top;
+        b{
+            display: inline-block;
+            padding: .25em .5em;
+            border-radius: 3px;
+            background: #fff;
+            margin-bottom: .25em;
+            box-shadow: inset 0 0 0 1px #cecece;
+        }
+
+        @include screen('mobile') {
+            width: calc(50% - 6px);
+        }
+    }
+
+    display: none;
+}
+
+// 縣市蟲害現況
+.situation{
+    section{
+        &.item{
+            border: solid 1px #ddd;
+            margin: .5em 0;
+            border-radius: 4px;
+            div{margin-bottom: 0; }
+        }
+
+        .flex{
+            div{
+                padding: .25em .5em;
+                flex: 1 1 25%;
+                text-align: center;
+                align-self: center;
+
+                &.city{
+                    font-weight: bold;
+                    line-height: 1.8;
+                    color: $primaryColor;
+                    // font-size: 1.125em;
+                }
+                &.now{}
+                &.system{}
+                &.position{
+                    &:before{
+                        content: '座標：';
+                    }
+                }
+
+                // &.now, &.system{
+                //     span{
+                //         display: inline-block;
+                //         padding: .25em 1em;
+                //         border-radius: 4px;
+                //     }
+                // }
+
+                span{
+                    b{
+                        &:first-child{
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            margin-right: 4px;
+                            margin-bottom: -4px;
+                            box-shadow: inset 0 0 0 2px #cecece;
+                        }
+                        &:last-child{}
+                    }
+                }
+                // b[class]{
+                //     display: inline-block;
+                //     width: 20px;
+                //     height: 20px;
+                //     border-radius: 50%;
+                //     margin-right: 4px;
+                //     margin-bottom: -4px;
+                // }
+            }
+
+            @include screen('mobile') {
+                div{
+                    flex: 1 1 33%;
+                    &:first-child{
+                        flex: 1 1 100%;
+                    }
+                }
+            }
+        }
+        .note{
+            background: #f1f1f1;
+            padding: .25em 1.25em;
+            font-size: .813em;
+            text-align: right;
+            &:before{
+                content: '異動紀錄：';
+            }
+        }
+    }
+}
+
 // 新增執行人員表單
 .add_form{
-    padding: 1em;
+    padding: 1em 0;
     .result{
         @extend %flex;
         align-items: flex-end;
@@ -558,11 +673,29 @@ body {
                         span{
                             display: block;
                             margin: .4em 0;
-                            background: #eaeaea;
-                            a{
-                                position: absolute;
-                                right: 12px;
-                                top: calc(50% - 11px);
+                            background: url(../images/icon/icon_add.svg) right 10px top 50% no-repeat, #eaeaea;
+                            background-size: 16px 16px;
+                            transition: all .2s ease;
+
+                            &:hover{
+                                cursor: pointer;
+                                background: url(../images/icon/icon_add.svg) right 10px top 50% no-repeat, #a3b5a3;
+                                background-size: 16px 16px;
+                                color: #fff;
+                            }
+                        }
+
+                        &.added{
+                            span{
+                                background: url(../images/icon/icon_close.svg) right 10px top 50% no-repeat, #a3b5a3;
+                                background-size: 16px 16px;
+                                transition: all .2s ease;
+                                color: #fff;
+                                &:hover{
+                                    cursor: pointer;
+                                    background: url(../images/icon/icon_close.svg) right 10px top 50% no-repeat, darken(#a3b5a3, 10);
+                                    background-size: 16px 16px;
+                                }
                             }
                         }
                     }
@@ -1186,6 +1319,13 @@ body {
                         filter: invert(100%);
                     }
                 }
+
+                &.btn-primary, &.btn-secondary{
+                    i {
+                        filter: invert(0%);
+                    }
+                }
+
                 .i_sort {
                     font-size: .75em;
                 }

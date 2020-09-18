@@ -147,7 +147,6 @@
     }
 }
 
-
 // test
 .tabSet2 {
     // background: #eee;
@@ -190,8 +189,6 @@
                 }
             }
 
-
-
             @include screen('tablet') {
                 flex-flow: row wrap;
                 h2{
@@ -226,25 +223,25 @@
                             margin: .2em 0;
                             box-shadow: inset 0 0 0 1px #cecece;
 
-                            //警告
-                            &.alert{
-                                background: #bf0404;
-                                color: #fff;
-                            }
-                            //預警
-                            &.pre-alert{
-                                background: #eac200;
-                                color: #222;
-                            }
-                            //目前安全
-                            &.safe{
-                                background: green;
-                                color: #fff;
-                            }
+                            // //警告
+                            // &.alert{
+                            //     background: #bf0404;
+                            //     color: #fff;
+                            // }
+                            // //預警
+                            // &.pre-alert{
+                            //     background: #eac200;
+                            //     color: #222;
+                            // }
+                            // //目前安全
+                            // &.safe{
+                            //     background: green;
+                            //     color: #fff;
+                            // }
 
-                            &.alert, &.pre-alert, &.safe{
-                                box-shadow: none;
-                            }
+                            // &.alert, &.pre-alert, &.safe{
+                            //     box-shadow: none;
+                            // }
                         }
 
                         @include screen('tablet') {
@@ -255,6 +252,26 @@
             }
         }
     }
+}
+
+//警告
+.alert{
+    background: #bf0404 !important;
+    color: #fff;
+}
+//預警
+.pre-alert{
+    background: #eac200 !important;
+    color: #222;
+}
+//目前安全
+.safe{
+    background: green !important;
+    color: #fff;
+}
+
+.alert, .pre-alert, .safe{
+    box-shadow: none !important;
 }
 
 

@@ -568,7 +568,10 @@ select {
 }
 textarea {
     min-height: 10em;
-    background: #FCFCFC;
+    // background: #FCFCFC;
+    
+    border: solid 1px #ddd;
+    background: #ffffff;
     &:focus {
         background: #F5F5F5;
     }
