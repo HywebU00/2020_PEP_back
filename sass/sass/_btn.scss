@@ -191,6 +191,24 @@ $btn-radius: 4px;
     }
 }
 
+// 我要通報
+#alert{
+    // background: #DDD;
+    // font-size: 1em;
+    // color: #fff;
+    // padding: .5em 1.25em;
+    // border-radius: 20px;
+
+    position: fixed;
+    z-index: 1;
+    top: 64px;
+    right: 8em;
+    background: #3a9800;
+    color: #fff;
+    border-radius: 20px;
+    i{ filter: invert(100%); }
+}
+
 // 純文字按鈕
 .btn-pure {
     text-shadow: none;
