@@ -434,23 +434,37 @@ $(function(){
     /*-----------------------------------*/
     ////////////////多組Tab////////////////
     /*-----------------------------------*/
-    $('.tabSet2 .tabItem').find('h2:first-child').addClass('active');
-    $('.tabContent').find('.box:first-child').addClass('show');
-    $('.tabSet2 .tabItem h2').click(function(){
-        // 提取被點選的 .tabItem h2 的 index
-        // 把 .show 丟到對應的 .tabContent 的 index
-        // alert('有');
-        var $index = $( ".tabItem h2" ).index( this ),
-            $now = $index +1;
-        // $( ".tabSet2 span" ).text( "That was div index #" + index );
-        $('.tabItem h2').removeClass('active');
-        $('.tabContent .box').removeClass('show')
-        $(this).addClass('active');
-        // 第 index 個 div 塞入 show
-        $('.tabContent .box:nth-child('+$now+')').addClass('show')
+    // $('.tabSet2 .tabItem').find('h2:first-child').addClass('active');
+    // $('.tabContent').find('.box:first-child').addClass('show');
+    // $('.tabSet2 .tabItem h2').click(function(){
+    //     // 提取被點選的 .tabItem h2 的 index
+    //     // 把 .show 丟到對應的 .tabContent 的 index
+    //     // alert('有');
+    //     var $index = $( ".tabItem h2" ).index( this ),
+    //         $now = $index +1;
+    //     // $( ".tabSet2 span" ).text( "That was div index #" + index );
+    //     $('.tabItem h2').removeClass('active');
+    //     $('.tabContent .box').removeClass('show')
+    //     $(this).addClass('active');
+    //     // 第 index 個 div 塞入 show
+    //     $('.tabContent .box:nth-child('+$now+')').addClass('show');
+    // });
+    $('.tabs').find('h2:first-child').addClass('active');
+    $('.tabs').find('.box:first-child').addClass('show');
 
+    $('.tabItem h2').on('click', function(){
+        if(!$(this).hasClass('active')){
+            $(this).siblings('h2').removeClass('active');
+            $(this).addClass('active');
+        }
+
+        if(!$(this).parent().next('.tabContent').find('.box').eq($(this).index()).hasClass('show')) {
+            $(this).parent().next('.tabContent').find('.box').removeClass('show');
+        } 
+        $(this).parent().next('.tabContent').find('.box').eq($(this).index()).addClass('show');
     });
 
+    
     /*-----------------------------------*/
     /////////////modal設定/////////////
     /*-----------------------------------*/
