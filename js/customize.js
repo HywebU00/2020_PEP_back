@@ -449,6 +449,7 @@ $(function(){
     //     // 第 index 個 div 塞入 show
     //     $('.tabContent .box:nth-child('+$now+')').addClass('show');
     // });
+    
     $('.tabs').find('h2:first-child').addClass('active');
     $('.tabs').find('.box:first-child').addClass('show');
 
@@ -525,6 +526,56 @@ $(function(){
     $('.scrollToTop').keydown(function(e) {
         _body.find('a:first').focus();
         e.preventDefault();
+    });
+
+    /*--------------------------------------------*/
+    ///////////////燈箱slick+lightBox組合////////////
+    /*--------------------------------------------*/
+    $('.cp_slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        focusOnSelect: true,
+        accessibility: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+            }
+        }, {
+            breakpoint: 545,
+            settings: {
+                arrows: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+            }
+        }]
+    });
+    $('.cp_slider').slickLightbox({
+        caption: 'caption',
+        lazyLoad: 'ondemand',
+        useHistoryApi: 'true',
+        ease: 'ease',
+        lazy: true
     });
 })
 

@@ -173,11 +173,9 @@ body {
 .small_size { font-size: .938em; }
 .large_size { font-size: 1.125em; }
 
-.flex, .flex{
+.flex{
     border: 0;
     @extend %flex;
-    justify-content: flex-start;
-    align-items: baseline;
 
     input, select{
         width: auto;
@@ -652,6 +650,30 @@ body {
 // 新增執行人員表單
 .add_form{
     padding: 1em 0;
+
+    section{
+        h3{
+            margin-left: 10px;
+            padding: .5em 0;
+        }
+        h4{
+            color: #074f5f;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.125em;
+            &:before{
+                content: '';
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                background: #074f5f;
+                vertical-align: middle;
+                margin-bottom: 2px;
+                margin-right: .5em;
+            }
+        }
+    }
+
     .result{
         @extend %flex;
         align-items: flex-end;
@@ -691,10 +713,18 @@ body {
 
         ._content{
             .flex{
-                justify-content: space-between;
+                // justify-content: space-between;
+                // align-items: flex-start;
 
                 .box{
-                    @include flex_layout(2,10px);
+                    @include flex_layout(2,0px);
+                    padding: 0 8px;
+                    box-sizing: border-box;
+
+                    input[type="text"]{
+                        padding: .35em .75em;
+                        width: calc(100% - 80px);
+                    }
 
                     .item_list{
                         max-height: 340px; 
@@ -716,29 +746,59 @@ body {
 
                         &.added{
                             span{
-                                background: url(../images/icon/icon_close.svg) right 10px top 50% no-repeat, #a3b5a3;
+                                background: url(../images/icon/icon_close.svg) right 16px top 50% no-repeat, #a3b5a3;
                                 background-size: 16px 16px;
                                 transition: all .2s ease;
                                 color: #fff;
                                 &:hover{
                                     cursor: pointer;
-                                    background: url(../images/icon/icon_close.svg) right 10px top 50% no-repeat, darken(#a3b5a3, 10);
+                                    background: url(../images/icon/icon_close.svg) right 14px top 50% no-repeat, darken(#a3b5a3, 10);
                                     background-size: 16px 16px;
                                 }
                             }
                         }
                     }
                 }
+
+                &.tree{
+                    // display: contents;
+                    // @include clearfix;
+
+                    // 目錄樹
+                    .widget{ min-width: 200px; }
+                    .box{}
+                }
             }
         }
     }
 
+    .btn_grp{ padding: 1.5em 0 .75em; }
+
     @include screen('tablet') {
         .form_box{
+            padding: 1.5em 1em;
             ._content{
                 .flex{
-                    .box{
-                        @include flex_layout(1,0px);
+                    .box{ @include flex_layout(1,0px); }
+
+                    &.tree{
+                        display: contents !important;
+                        // justify-content: space-between;
+                        // align-items: flex-start;
+                        &:after{
+                            content:'';
+                            display:table;
+                            clear:both;
+                        }
+
+                        // 目錄樹
+                        .widget{
+                            display: block;
+                            float: left;
+                        }
+                        .box{
+                            display: block;
+                        }
                     }
                 }
             }
@@ -1141,9 +1201,7 @@ body {
             width: 100%;
 
             div{
-                margin-bottom: 1.5em;
-
-
+                // margin-bottom: 1.5em;
                 // &:last-child{ margin-bottom: 0; }
             }
         }
