@@ -334,6 +334,7 @@ table {
 }
 .table_wrapper {
     margin-bottom: 2em;
+    overflow-x: scroll;
 
     &.th_left{
         th{
