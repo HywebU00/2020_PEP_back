@@ -859,7 +859,19 @@ body {
         padding: .25em 1em;
     }
 }
-
+// 地圖外掛按鈕調整
+#TGMap{
+    table {
+        background: none;
+        width: auto;
+        left: 20px !important;
+        top: 40% !important;
+        td{
+            border: 0;
+            padding: 0;
+        }
+    }
+}
 // ------------------- END --------------------------
 
 
